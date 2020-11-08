@@ -2,14 +2,7 @@ import React from 'react';
 import './Track.css';
 
 class Track extends React.Component {
-    renderAction() {
-        let bType;
-        if (isRemoval) {
-            bType = '-';
-        } else {
-            bType = '+';
-        }
-    }
+
     render() {
         return (
             <div className="Track">
@@ -17,7 +10,7 @@ class Track extends React.Component {
                     <h3>Track Name</h3>
                     <p>Track Artist | Track Album</p>
                 </div>
-        <button className="Track-action">{bType}</button>
+        <button className="Track-action"></button>
             </div>
         );
     }
