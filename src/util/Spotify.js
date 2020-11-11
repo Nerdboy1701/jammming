@@ -46,8 +46,8 @@ const Spotify = {
         })
     },
 
-    savePlayList(name, trackUris) {
-        if (!name || !trackUris) {
+    savePlaylist(playlistName, trackUris) {
+        if (!playlistName || !trackUris) {
             return;
         }
 
@@ -63,9 +63,9 @@ const Spotify = {
             {
                 headers: headers,
                 method: 'POST',
-                body: JSON.stringify({name: name})
-            }).then(response => response.json()
-            ).then(jsonResponse => {
+                body: JSON.stringify({name: playlistName})
+            }).then(response => response.json())
+            .then(jsonResponse => {
                 const playlistId = jsonResponse.id;
                 return fetch(`https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`, 
                 {
