@@ -43,8 +43,8 @@ const Spotify = {
             }));
         });
     },
-    savePlaylist(playlistName, tracks) {
-        if (!playlistName || !tracks) {
+    savePlaylist(playlistName, trackUris) {
+        if (!playlistName || !trackUris) {
             return;
         }
         const accessToken = Spotify.getAccessToken();
@@ -60,14 +60,14 @@ const Spotify = {
             return fetch(`https://api.spotify.com/v1/user/${userId}/playlists`, {
                 headers: headers,
                 method: 'POST',
-                body: JSON.stringify({name: name})
+                body: JSON.stringify({name: playlistName})
             }).then(response => response.json())
             .then(jsonResponse => {
                 const playlistId = jsonResponse.id;
                 return fetch(`https://api.spotify.com/v1/user/${userId}/playlists/${playlistId}/tracks`, {
                     headers: headers,
                     method: 'POST',
-                    body: JSON.stringify({ uris: trackUris})
+                    body: JSON.stringify({uris: trackUris})
                 })
             })
         })
