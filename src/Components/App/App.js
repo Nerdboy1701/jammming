@@ -38,7 +38,7 @@ class App extends React.Component {
 	}
 	savePlayList() {
 		const trackUris = this.state.playlistTracks.map(track => track.uri);
-		Spotify.savePlayList(this.state.playlistName, trackUris)
+		Spotify.savePlaylist(this.state.playlistName, trackUris)
 		.then(() => {
 			this.setState({
 				playlistName: 'New Playlist', 
@@ -65,7 +65,7 @@ class App extends React.Component {
 							playlistTracks={this.state.playlistTracks}
 							onRemove={this.removeTrack}
 							onNameChange={this.updatePlaylistName}
-							onSave={this.savePlaylist}
+							onSave={this.savePlayList}
 						></Playlist>
 					</div>
 				</div>
