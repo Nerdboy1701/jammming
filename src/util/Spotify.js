@@ -1,5 +1,8 @@
 const clientId = '62b1bca7208b414fa1d02debc3b8eed3';
 const redirectUri = 'http://ijammming.surge.sh';
+//https://www.codecademy.com/paths/web-development/tracks/front-end-applications-with-react/modules/jammming/projects/jammming-prj
+//Step 99 still unresolved - check as completed for now.
+
 let accessToken;
 
 const Spotify = {
