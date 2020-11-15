@@ -33,7 +33,6 @@ class App extends React.Component {
 		oldTrack = oldTrack.filter((currentTrack) => currentTrack.id !== track.id);
 		this.setState({ playlistTracks: oldTrack });
 	}
-	//TODO: Fix this!!
 	updatePlaylistName(name) {
 		this.setState({ playlistName: name });
 	}
